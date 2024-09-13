@@ -27,3 +27,11 @@ class Quiz:
         info += f'Total de pontos: {self.calcular_pontos()}\n'
         return info
     
+class Quiz2A(Quiz):
+    def calcular_pontos(self):
+        return self.get_acertos() - (4*self.get_erros())
+
+class Quiz3A(Quiz):
+    def calcular_pontos(self):
+        return self.get_acertos() - (2*self.get_erros())
+    
