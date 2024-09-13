@@ -1,6 +1,29 @@
-x = 1
-y = 4
+class Quiz:
+    disciplina: str
+    aluno: str
+    __acertos: int
+    __erros: int
 
-soma = x + y
+    def __init__(self, d: str, a : str,
+                 acertos : int, erros : int):
+        self.disciplina = d
+        self.aluno = a
+        self.__acertos = acertos
+        self.__erros = erros
 
-print(soma + "ta certo")
+    def get_erros(self):
+        return self.__erros
+    
+    def get_acertos(self):
+        return self.__acertos
+    
+    def calcular_pontos(self):
+        return self.__acertos - self.__erros
+    
+    def __str__(self):
+        info = f'Disciplina: {self.disciplina}\n'
+        info += f'Aluno: {self.aluno}\n'
+        info += f'Acertos: {self.__acertos} Erros: {self.__erros}\n'
+        info += f'Total de pontos: {self.calcular_pontos()}\n'
+        return info
+    
